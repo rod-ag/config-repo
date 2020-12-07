@@ -25,4 +25,32 @@ zuul:
       path: /creaPedido
       service-id: pedidos
       strip-prefix: false
+---
+spring:
+  profiles: docker
+  security:
+    user:
+      name: user
+      password: password
+      role: USER
 
+server:
+  port: 9999
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://eurekaregistry:8761/eureka
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+        
+zuul:
+  routes:
+    pedidos:
+      path: /creaPedido
+      service-id: pedidos
+      strip-prefix: false
