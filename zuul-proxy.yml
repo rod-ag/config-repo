@@ -1,0 +1,28 @@
+server:
+  port: 9999
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka
+
+spring:
+  security:
+    user:
+      name: user
+      password: password
+      role: USER
+      
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+        
+zuul:
+  routes:
+    pedidos:
+      path: /creaPedido
+      service-id: pedidos
+      strip-prefix: false
+
