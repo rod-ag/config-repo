@@ -33,4 +33,4 @@ server:
   
 logging:
   file:
-    name: /log-central.log
+    name: /home/log-central.log
