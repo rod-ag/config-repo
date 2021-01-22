@@ -27,6 +27,8 @@ spring:
       settings:
         trace: false
         web-allow-others: false
+  kafka:
+    bootstrapServers: kafka:9092
 
 server:
   port: 9002
